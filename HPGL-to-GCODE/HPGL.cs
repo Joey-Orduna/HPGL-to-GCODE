@@ -33,8 +33,11 @@ namespace HPGL_to_GCODE
                 else
                     command.SetInstruction(Instruction.Undefined);
 
+                if (commandSplit == "")
+                    continue;
                 string[] coordinateSplits = commandSplit.Substring(2).Split(',');
 
+                
                 if (command.Instruction != Instruction.Undefined)
                 {
                     for (int i = 0; i < coordinateSplits.Length; i += 2)
